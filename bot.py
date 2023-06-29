@@ -28,6 +28,7 @@ def registro_handler():
 
 
 def consultarExtras(telefono):
+    print ('La dirección IP del cliente es:'+ request.remote_addr)
     url = "https://gfcloud.telmex.com/iafipe/afp"
     headers = {
         "Content-Type": "application/json",
