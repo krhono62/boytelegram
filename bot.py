@@ -76,12 +76,12 @@ def direccion(resultado):
     data = {"strvar": str(resultado)}
 
     response = requests.post(url, headers=headers, json=data)
-    print(response)
+    print(response.text)
     return response.text
 
 @app.route('/direccion', methods=['POST'])
 def direcciones():
-    telefono = request.form.get('resultado')
+    telefono = request.args.get('resultado')
     result = direccion(telefono)
     return result
 
